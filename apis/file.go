@@ -232,7 +232,9 @@ func (api *fileApi) createThumb(
 		}
 		defer api.thumbGenSem.Release(1)
 
-		return nil, fsys.CreateThumb(originalPath, thumbPath, thumbSize)
+		return nil, recoverThumbPanic(func() error {
+			return fsys.CreateThumb(originalPath, thumbPath, thumbSize)
+		})
 	})
 
 	res := <-ch
@@ -240,4 +242,19 @@ func (api *fileApi) createThumb(
 	api.thumbGenPending.Forget(thumbPath)
 
 	return res.Err
+}
+
+// recoverThumbPanic runs fn and converts a panic into an error.
+//
+// A panic inside a singleflight.DoChan callback is re-panicked in a new
+// goroutine and cannot be recovered by the router middleware, so a
+// malformed image tripping a decoder bug would otherwise crash the process.
+func recoverThumbPanic(fn func() error) (err error) {
+	defer func() {
+		if r := recover(); r != nil {
+			err = fmt.Errorf("thumb generation panic: %v", r)
+		}
+	}()
+
+	return fn()
 }
