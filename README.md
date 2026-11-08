@@ -1,4 +1,11 @@
-**⚠️ The repo has moved to https://ganigeorgiev.com/pocketbase/pocketbase.**
+> [!IMPORTANT]
+> **This is a fork, not the official PocketBase.**
+>
+> The original GitHub repository ([pocketbase/pocketbase](https://github.com/pocketbase/pocketbase)) was archived at v0.40.6 when the project moved to https://ganigeorgiev.com/pocketbase/pocketbase. This fork continues from that point so that it can be patched for use in Oortis Headless CMS.
+>
+> - It will deviate from the official PocketBase over time. Fixes and features released upstream after v0.40.6 are not included unless they are ported here, and changes made here may never exist upstream.
+> - Releases are built from this repository and published at https://github.com/franzen/pocketbase/releases.
+> - Please don't report issues with this fork to the PocketBase maintainers. For the official version, go to https://ganigeorgiev.com/pocketbase/pocketbase.
 
 ---
 
@@ -9,8 +16,8 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/pocketbase/pocketbase/actions/workflows/release.yaml" target="_blank" rel="noopener"><img src="https://github.com/pocketbase/pocketbase/actions/workflows/release.yaml/badge.svg" alt="build" /></a>
-    <a href="https://github.com/pocketbase/pocketbase/releases" target="_blank" rel="noopener"><img src="https://img.shields.io/github/release/pocketbase/pocketbase.svg" alt="Latest releases" /></a>
+    <a href="https://github.com/franzen/pocketbase/actions/workflows/release.yaml" target="_blank" rel="noopener"><img src="https://github.com/franzen/pocketbase/actions/workflows/release.yaml/badge.svg" alt="build" /></a>
+    <a href="https://github.com/franzen/pocketbase/releases" target="_blank" rel="noopener"><img src="https://img.shields.io/github/release/franzen/pocketbase.svg" alt="Latest releases" /></a>
     <a href="https://pkg.go.dev/github.com/pocketbase/pocketbase" target="_blank" rel="noopener"><img src="https://godoc.org/github.com/pocketbase/pocketbase?status.svg" alt="Go package documentation" /></a>
 </p>
 
