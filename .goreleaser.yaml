@@ -43,7 +43,7 @@ builds:
         goarch: ppc64le
 
 release:
-  draft: true
+  draft: false
 
 archives:
   - id: archive_noncgo
